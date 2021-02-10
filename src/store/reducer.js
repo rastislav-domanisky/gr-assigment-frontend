@@ -1,5 +1,5 @@
 const initialState = {
-    currentPage: 1,
+    currentPage: 0,
     currentOption: "SPECIFIC",
     choosedShelter: null,
     amount: 50,
