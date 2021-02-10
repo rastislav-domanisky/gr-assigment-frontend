@@ -1,0 +1,13 @@
+.Footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .footerLogo {
+        margin: 50px 0;
+        padding: 5px 15px;
+        width: 180px;
+    }
+}
