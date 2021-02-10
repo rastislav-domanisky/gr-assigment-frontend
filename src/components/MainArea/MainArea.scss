@@ -1,4 +1,16 @@
 .MainArea {
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .dogImage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 364px;
+        height: 730px;
+    }
 }
