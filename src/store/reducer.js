@@ -10,9 +10,15 @@ const initialState = {
     acceptedPersonalData: false,
     shelters: null,
     pages: [
-        {},
-        {},
-        {},
+        {
+            heading: "Vyberte si možnosť, ako chcete pomôcť"
+        },
+        {
+            heading: "Potrebujeme od Vás zopár informácií"
+        },
+        {
+            heading: "Skontrolujte si zadané údaje"
+        },
     ]
 };
 
