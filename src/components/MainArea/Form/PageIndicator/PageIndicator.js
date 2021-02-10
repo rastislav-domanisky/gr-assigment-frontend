@@ -1,30 +1,29 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 import "./PageIndicator.scss";
 
 const PageIndicator = (props) => {
+    let indicators = [];
+    for(let i=0; i<props.count; i++) {
+        indicators.push(
+            <div className={
+                i === props.current
+                    ? "pIndicator pIndicatorCurrent"
+                    : "pIndicator"
+            } key={i} />
+        );
+    }
+
     return (
         <div className="PageIndicator">
-            {
-                props.pages.map((page, index) => {
-                    return (
-                        <div className={
-                            index === props.currentPage
-                                ? "pIndicator pIndicatorCurrent"
-                                : "pIndicator"
-                        } key={index} />
-                    );
-                })
-            }
+            {indicators}
         </div>
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        pages: state.pages,
-        currentPage: state.currentPage,
-    };
-};
+PageIndicator.propTypes = {
+    count: PropTypes.number.isRequired,
+    current: PropTypes.number.isRequired,
+}
 
-export default connect(mapStateToProps)(PageIndicator);
+export default PageIndicator;
