@@ -2,6 +2,7 @@ import React from 'react';
 import './Form.scss';
 import PageIndicator from './PageIndicator/PageIndicator';
 import { connect } from 'react-redux';
+import FormOptions from './FormOptions/FormOptions';
 
 const Form = (props) => {
     return (
@@ -10,6 +11,7 @@ const Form = (props) => {
             <div className="heading">
                 <h1>{props.pages[props.currentPage].heading}</h1>
             </div>
+            <FormOptions />
         </div>
     );
 }
