@@ -1,0 +1,25 @@
+.PageIndicator {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .pIndicator {
+        width: 20px;
+        height: 6px;
+        border-radius: 10px;
+        opacity: 36%;
+        background: #9F9F9F;
+        margin: 0px 5px;
+    }
+
+    .pIndicatorCurrent {
+        width: 45px;
+        height: 6px;
+        border-radius: 10px;
+        opacity: 100%;
+        background: linear-gradient(94.75deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100.7%), #CD8B65;
+        border-radius: 10px;
+    }
+}
