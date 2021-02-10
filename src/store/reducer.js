@@ -8,6 +8,7 @@ const initialState = {
     email: "",
     tel: "",
     acceptedPersonalData: false,
+    shelters: null,
 };
 
 const reducer = (state = initialState, action) => {
