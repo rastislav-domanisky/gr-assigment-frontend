@@ -9,6 +9,11 @@ const initialState = {
     tel: "",
     acceptedPersonalData: false,
     shelters: null,
+    pages: [
+        {},
+        {},
+        {},
+    ]
 };
 
 const reducer = (state = initialState, action) => {
