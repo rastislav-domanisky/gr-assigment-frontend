@@ -46,6 +46,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currentOption: action.payload,
             };
+        case actionTypes.PAGE_BACK:
+            return {
+                ...state,
+                currentPage: state.currentPage - 1,
+            };
+        case actionTypes.PAGE_FORWARD:
+            return {
+                ...state,
+                currentPage: state.currentPage + 1,
+            };
     }
     return state;
 }

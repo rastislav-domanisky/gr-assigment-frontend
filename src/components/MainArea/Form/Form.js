@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import FormOptions from './FormOptions/FormOptions';
 import Button from '../../Button/Button';
 import FormInput from './FormInput/FormInput';
+import * as actionTypes from '../../../store/actions';
 
 const Form = (props) => {
     return (
@@ -26,12 +27,12 @@ const Form = (props) => {
                 {
                     props.currentPage <= 0
                         ? <div />
-                        : <Button text="Späť" isDisabled={false} isMain={false} />
+                        : <Button text="Späť" isDisabled={false} isMain={false} method={props.onPageBack} />
                 }
                 {
                     props.currentPage >= props.pages.length
                         ? <div />
-                        : <Button text="Pokračovať" isDisabled={false} isMain={true} />
+                        : <Button text="Pokračovať" isDisabled={false} isMain={true} method={props.onPageForward} />
                 }
             </div>
         </div>
@@ -46,4 +47,11 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(Form);
+const mapDispatchToProps = dispatch => {
+    return {
+        onPageBack: () => dispatch({type: actionTypes.PAGE_BACK}),
+        onPageForward: () => dispatch({type: actionTypes.PAGE_FORWARD}),
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

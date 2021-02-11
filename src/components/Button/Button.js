@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 
 const Button = (props) => {
     return (
-        <div className={
+        <div
+        onClick={props.method}
+        className={
             props.isMain === true
                 ? props.isDisabled
                     ? "Button Disabled"
@@ -22,6 +24,7 @@ Button.propTypes = {
     isMain: PropTypes.bool.isRequired,
     isDisabled: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
+    method: PropTypes.func,
 }
 
 export default Button;
