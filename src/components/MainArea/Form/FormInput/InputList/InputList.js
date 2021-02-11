@@ -54,6 +54,9 @@ const InputList = (props) => {
                     <div className="inputListTags">
                         <p className="tag">{props.shelters[props.choosedShelter]["name"]}</p>
                     </div>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.9393 1L7.30164 6L1.664 1" stroke="#DFDFDF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                 </div>
             );
         }
@@ -74,7 +77,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onChooseShelter: (id) => dispatch({type: actionTypes.CHOOSE_SHELTER, payload: id}),
+        onChooseShelter: (id) => dispatch({ type: actionTypes.CHOOSE_SHELTER, payload: id }),
     }
 };
 
