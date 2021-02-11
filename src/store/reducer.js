@@ -2,7 +2,7 @@ import * as actionTypes from './actions';
 
 const initialState = {
     currentPage: 0,
-    currentOption: "SPECIFIC",
+    currentOption: "GENERAL",
     choosedShelter: null,
     amount: 50,
     name: "",
