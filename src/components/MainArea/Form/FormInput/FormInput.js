@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import InputList from './InputList/InputList';
 import InputAmount from './InputAmount/InputAmount';
+import InputContact from './InputContact/InputContact';
 
 const getInputComponent = (type) => {
     switch (type) {
@@ -17,6 +18,10 @@ const getInputComponent = (type) => {
         case "amount":
             return (
                 <InputAmount amounts={[5, 10, 20, 30, 50, 100]} currency="€" />
+            );
+        case "contact":
+            return (
+                <InputContact />
             );
     }
 }

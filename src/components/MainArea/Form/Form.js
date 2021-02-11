@@ -48,7 +48,7 @@ const Form = (props) => {
             case 1:
                 return (
                     <div>
-
+                        <FormInput label="O vás" isRequired={true} inputType="contact" />
                     </div>
                 );
             case 2:
