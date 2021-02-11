@@ -25,7 +25,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    switch ( action.type ) {
+    switch (action.type) {
         case actionTypes.LOAD_SHELTERS:
             return {
                 ...state,
@@ -36,11 +36,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 choosedShelter: action.payload,
             };
-            case actionTypes.UPDATE_AMOUNT:
-                return {
-                    ...state,
-                    amount: action.payload,
-                };
+        case actionTypes.UPDATE_AMOUNT:
+            return {
+                ...state,
+                amount: action.payload,
+            };
+        case actionTypes.UPDATE_OPTION:
+            return {
+                ...state,
+                currentOption: action.payload,
+            };
     }
     return state;
 }
