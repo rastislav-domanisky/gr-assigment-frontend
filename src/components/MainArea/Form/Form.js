@@ -19,8 +19,16 @@ const Form = (props) => {
                 <FormInput label="Suma, ktorou chcem prispieť" isRequired={true} inputType="amount" />
             </div>
             <div className="buttonsArea">
-                <Button text="Späť" isDisabled={false} isMain={false} />
-                <Button text="Pokračovať" isDisabled={false} isMain={true} />
+                {
+                    props.currentPage <= 0
+                        ? <div />
+                        : <Button text="Späť" isDisabled={false} isMain={false} />
+                }
+                {
+                    props.currentPage >= props.pages.length
+                        ? <div />
+                        : <Button text="Pokračovať" isDisabled={false} isMain={true} />
+                }
             </div>
         </div>
     );
