@@ -6,8 +6,60 @@ import FormOptions from './FormOptions/FormOptions';
 import Button from '../../Button/Button';
 import FormInput from './FormInput/FormInput';
 import * as actionTypes from '../../../store/actions';
+import amountValidator from '../../../models/AmountValidator';
 
 const Form = (props) => {
+
+    const canContinue = () => {
+        // PAGE 1
+        if(props.currentPage === 0) {
+            if(props.currentOption === "SPECIFIC" && props.choosedShelter === null) {
+                return false;
+            }
+            if(props.amount <= 0 || !amountValidator(props.amount)) {
+                return false;
+            }
+        }
+        // PAGE 2
+        if(props.currentPage === 1) {
+            
+        }
+        // PAGE 3
+        if(props.currentPage === 2) {
+            
+        }
+        return true;
+    }
+
+    const getPageContext = (props, pageIndex) => {
+        switch (pageIndex) {
+            case 0:
+                return (
+                    <div>
+                        <FormOptions />
+                        <FormInput label="Najviac mi záleží na útulku" isRequired={
+                            props.currentOption === "GENERAL"
+                                ? false
+                                : true
+                        } inputType="list" />
+                        <FormInput label="Suma, ktorou chcem prispieť" isRequired={true} inputType="amount" />
+                    </div>
+                );
+            case 1:
+                return (
+                    <div>
+
+                    </div>
+                );
+            case 2:
+                return (
+                    <div>
+
+                    </div>
+                );
+        }
+    }
+
     return (
         <div className="Form">
             <PageIndicator count={props.pages.length} current={props.currentPage} />
@@ -15,13 +67,9 @@ const Form = (props) => {
                 <div className="heading">
                     <h1>{props.pages[props.currentPage].heading}</h1>
                 </div>
-                <FormOptions />
-                <FormInput label="Najviac mi záleží na útulku" isRequired={
-                    props.currentOption === "GENERAL"
-                        ? false
-                        : true
-                } inputType="list" />
-                <FormInput label="Suma, ktorou chcem prispieť" isRequired={true} inputType="amount" />
+                {
+                    getPageContext(props, props.currentPage)
+                }
             </div>
             <div className="buttonsArea">
                 {
@@ -32,7 +80,9 @@ const Form = (props) => {
                 {
                     props.currentPage >= props.pages.length
                         ? <div />
-                        : <Button text="Pokračovať" isDisabled={false} isMain={true} method={props.onPageForward} />
+                        : <Button text="Pokračovať" isDisabled={
+                            !canContinue()
+                        } isMain={true} method={props.onPageForward} />
                 }
             </div>
         </div>
@@ -41,16 +91,14 @@ const Form = (props) => {
 
 const mapStateToProps = state => {
     return {
-        currentPage: state.currentPage,
-        pages: state.pages,
-        currentOption: state.currentOption,
+        ...state,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onPageBack: () => dispatch({type: actionTypes.PAGE_BACK}),
-        onPageForward: () => dispatch({type: actionTypes.PAGE_FORWARD}),
+        onPageBack: () => dispatch({ type: actionTypes.PAGE_BACK }),
+        onPageForward: () => dispatch({ type: actionTypes.PAGE_FORWARD }),
     }
 };
 

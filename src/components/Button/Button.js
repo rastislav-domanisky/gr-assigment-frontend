@@ -5,7 +5,15 @@ import PropTypes from "prop-types";
 const Button = (props) => {
     return (
         <div
-        onClick={props.method}
+        onClick={
+            () => {
+                if(props.isDisabled) {
+                    return;
+                } else {
+                    props.method();
+                }
+            }
+        }
         className={
             props.isMain === true
                 ? props.isDisabled
