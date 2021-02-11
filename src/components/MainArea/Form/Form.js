@@ -78,7 +78,7 @@ const Form = (props) => {
                         : <Button text="Späť" isDisabled={false} isMain={false} method={props.onPageBack} />
                 }
                 {
-                    props.currentPage >= props.pages.length
+                    props.currentPage >= props.pages.length -1
                         ? <div />
                         : <Button text="Pokračovať" isDisabled={
                             !canContinue()
