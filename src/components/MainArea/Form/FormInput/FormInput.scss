@@ -1,0 +1,31 @@
+.FormInput {
+    width: 100%;
+    margin: 56px 0;
+
+    .labelArea {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .label {
+            padding: 0;
+            margin: 0;
+            font-family: "Public Sans";
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 19px;
+            color: #2F2F2F;
+        }
+
+        .requiredText {
+            padding: 0;
+            margin: 0;
+            font-family: "Public Sans";
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 19px;
+            color: #2F2F2F;
+        }
+    }
+}

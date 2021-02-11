@@ -4,6 +4,7 @@ import PageIndicator from './PageIndicator/PageIndicator';
 import { connect } from 'react-redux';
 import FormOptions from './FormOptions/FormOptions';
 import Button from '../../Button/Button';
+import FormInput from './FormInput/FormInput';
 
 const Form = (props) => {
     return (
@@ -14,6 +15,7 @@ const Form = (props) => {
                     <h1>{props.pages[props.currentPage].heading}</h1>
                 </div>
                 <FormOptions />
+                <FormInput label="Najviac mi záleží na útulku" isRequired={false} inputType="list" />
             </div>
             <div className="buttonsArea">
                 <Button text="Späť" isDisabled={false} isMain={false} />

@@ -31,6 +31,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 shelters: action.payload,
             };
+        case actionTypes.CHOOSE_SHELTER:
+            return {
+                ...state,
+                choosedShelter: action.payload,
+            };
     }
     return state;
 }

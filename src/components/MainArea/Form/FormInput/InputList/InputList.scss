@@ -1,0 +1,100 @@
+.InputList {
+    width: 550px;
+    height: 74px;
+    border-radius: 8px;
+    background: #FFF;
+    cursor: pointer;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .inputListTags {
+        display: flex;
+        flex-direction: column;
+        margin: 0 24px;
+
+        .tag {
+            padding: 0;
+            margin: 0;
+            font-family: "Public Sans";
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 21px;
+            color: #2F2F2F;
+        }
+
+        .subText {
+            padding: 0;
+            margin: 0;
+            font-family: "Public Sans";
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
+            color: #9F9F9F;
+        }
+    }
+
+    svg {
+        margin: 0px 27px;
+    }
+}
+
+.InputListOpened {
+    width: 550px;
+    height: 300px;
+    border-radius: 8px;
+    background: #FFF;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
+    overflow: auto;
+
+    .inputListTags {
+        cursor: pointer;
+
+        .shelterItem {
+            padding: 0;
+            margin: 10px 24px;
+            font-family: Public Sans;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba($color: #2F2F2F, $alpha: 0.8);
+        }
+    }
+
+    .inputListTags:hover {
+        .shelterItem{
+            color: #2F2F2F;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #FFF;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #DFDFDF;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DFDFDF;
+  }
