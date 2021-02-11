@@ -13,11 +13,11 @@ const FormOption = (props) => {
         className={
             props.isLeft === true
                 ? props.isChoosed === true
-                    ? "FormOption Left"
-                    : "FormOption Left notChoosed"
+                    ? "FormOption Left notChoosed"
+                    : "FormOption Left"
                 : props.isChoosed === true
-                    ? "FormOption Right"
-                    : "FormOption Right notChoosed"
+                    ? "FormOption Right notChoosed"
+                    : "FormOption Right"
         }>
         {props.children}
         </div>
