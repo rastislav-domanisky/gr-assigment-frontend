@@ -1,0 +1,1 @@
+export const LOAD_SHELTERS = 'LOAD_SHELTERS';
