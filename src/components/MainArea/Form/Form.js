@@ -15,7 +15,11 @@ const Form = (props) => {
                     <h1>{props.pages[props.currentPage].heading}</h1>
                 </div>
                 <FormOptions />
-                <FormInput label="Najviac mi záleží na útulku" isRequired={false} inputType="list" />
+                <FormInput label="Najviac mi záleží na útulku" isRequired={
+                    props.currentOption === "GENERAL"
+                        ? false
+                        : true
+                } inputType="list" />
                 <FormInput label="Suma, ktorou chcem prispieť" isRequired={true} inputType="amount" />
             </div>
             <div className="buttonsArea">
@@ -38,6 +42,7 @@ const mapStateToProps = state => {
     return {
         currentPage: state.currentPage,
         pages: state.pages,
+        currentOption: state.currentOption,
     };
 };
 
