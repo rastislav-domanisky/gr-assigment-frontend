@@ -36,6 +36,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 choosedShelter: action.payload,
             };
+            case actionTypes.UPDATE_AMOUNT:
+                return {
+                    ...state,
+                    amount: action.payload,
+                };
     }
     return state;
 }
