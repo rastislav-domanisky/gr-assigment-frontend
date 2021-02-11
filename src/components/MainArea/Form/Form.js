@@ -16,6 +16,7 @@ const Form = (props) => {
                 </div>
                 <FormOptions />
                 <FormInput label="Najviac mi záleží na útulku" isRequired={false} inputType="list" />
+                <FormInput label="Suma, ktorou chcem prispieť" isRequired={true} inputType="amount" />
             </div>
             <div className="buttonsArea">
                 <Button text="Späť" isDisabled={false} isMain={false} />

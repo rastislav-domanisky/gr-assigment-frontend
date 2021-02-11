@@ -3,6 +3,7 @@ import "./FormInput.scss";
 import PropTypes from 'prop-types';
 
 import InputList from './InputList/InputList';
+import InputAmount from './InputAmount/InputAmount';
 
 const getInputComponent = (type) => {
     switch (type) {
@@ -12,7 +13,11 @@ const getInputComponent = (type) => {
                     tag="Útulok"
                     subText="Vyberte útulok zo zoznamu"
                 />
-            )
+            );
+        case "amount":
+            return (
+                <InputAmount amounts={[5, 10, 20, 30, 50, 100]} currency="€" />
+            );
     }
 }
 
