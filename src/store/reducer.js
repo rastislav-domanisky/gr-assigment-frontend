@@ -1,3 +1,5 @@
+import * as actionTypes from './actions';
+
 const initialState = {
     currentPage: 0,
     currentOption: "SPECIFIC",
@@ -23,6 +25,13 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+    switch ( action.type ) {
+        case actionTypes.LOAD_SHELTERS:
+            return {
+                ...state,
+                shelters: action.payload,
+            };
+    }
     return state;
 }
 
