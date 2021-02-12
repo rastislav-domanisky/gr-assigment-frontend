@@ -8,3 +8,4 @@ export const UPDATE_NAME = 'UPDATE_NAME';
 export const UPDATE_LAST_NAME = 'UPDATE_LAST_NAME';
 export const UPDATE_EMAIL = 'UPDATE_EMAIL';
 export const UPDATE_TEL = 'UPDATE_TEL';
+export const UPDATE_PERSONAL_DATA = 'UPDATE_PERSONAL_DATA';

@@ -76,6 +76,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 tel: action.payload,
             };
+        case actionTypes.UPDATE_PERSONAL_DATA:
+            return {
+                ...state,
+                acceptedPersonalData: action.payload,
+            };
     }
     return state;
 }

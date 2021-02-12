@@ -42,7 +42,9 @@ const Form = (props) => {
         }
         // PAGE 3
         if(props.currentPage === 2) {
-            
+            if(!props.acceptedPersonalData) {
+                return false;
+            }
         }
         return true;
     }
@@ -96,7 +98,7 @@ const Form = (props) => {
                 {
                     props.currentPage >= props.pages.length -1
                         ? <Button text="Odoslať formulár" isDisabled={
-                            false
+                            !canContinue()
                         } isMain={true} method={() => {}} />
                         : <Button text="Pokračovať" isDisabled={
                             !canContinue()

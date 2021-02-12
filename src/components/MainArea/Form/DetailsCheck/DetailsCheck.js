@@ -1,8 +1,14 @@
 import React from 'react';
 import './DetailsCheck.scss';
 import { connect } from 'react-redux';
+import * as actionTypes from '../../../../store/actions';
 
 const DetailsCheck = (props) => {
+
+    const toggleCheckBtn = () => {
+        props.onIUpdatePersonalData(!props.acceptedPersonalData);
+    }
+
     return (
         <div className="DetailsCheck">
             <div className="detailArea">
@@ -18,7 +24,7 @@ const DetailsCheck = (props) => {
             <div className="detailArea">
                 <p className="detailLabel">Najviac mi záleží na útulku</p>
                 <p className="detailValue">
-                    {   
+                    {
                         props.choosedShelter === null
                             ? ""
                             : props.shelters[props.choosedShelter]["name"]
@@ -57,6 +63,22 @@ const DetailsCheck = (props) => {
                     }
                 </p>
             </div>
+            <div className="checkArea">
+                <div className="checkBtn" onClick={
+                    toggleCheckBtn
+                }>
+                    {
+                        props.acceptedPersonalData
+                            ? (
+                                <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 1L6 12L1 7" stroke="#AB7455" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            )
+                            : null
+                    }
+                </div>
+                Súhlasím so spracovaním mojich osobných údajov
+            </div>
         </div>
     );
 }
@@ -67,4 +89,10 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps)(DetailsCheck);
+const mapDispatchToProps = dispatch => {
+    return {
+        onIUpdatePersonalData: (data) => dispatch({type: actionTypes.UPDATE_PERSONAL_DATA, payload: data}),
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsCheck);
