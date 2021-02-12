@@ -12,37 +12,59 @@ import lastNameValidator from '../../../models/LastNameValidator';
 import emailValidator from '../../../models/EmailValidator';
 import telNumberValidator from '../../../models/TelNumberValidator';
 import DetailsCheck from './DetailsCheck/DetailsCheck';
+import Shelter from '../../../models/Shelter';
 
 const Form = (props) => {
 
+    const shelter = new Shelter();
+
+    const sendData = () => {
+        let data = {
+            "firstName": props.name,
+            "lastName": props.lastName,
+            "email": props.email,
+            "phone": props.tel,
+            "value": props.amount,
+        };
+        if(props.choosedShelter !== null) {
+            data = {
+                ...data,
+                "shelterID": props.choosedShelter,
+            }
+        }
+        shelter.createContrib(data).then((result) => {
+            console.log(result);
+        });
+    }
+
     const canContinue = () => {
         // PAGE 1
-        if(props.currentPage === 0) {
-            if(props.currentOption === "SPECIFIC" && props.choosedShelter === null) {
+        if (props.currentPage === 0) {
+            if (props.currentOption === "SPECIFIC" && props.choosedShelter === null) {
                 return false;
             }
-            if(props.amount <= 0 || !amountValidator(props.amount)) {
+            if (props.amount <= 0 || !amountValidator(props.amount)) {
                 return false;
             }
         }
         // PAGE 2
-        if(props.currentPage === 1) {
-            if(!nameValidator(props.name)) {
+        if (props.currentPage === 1) {
+            if (!nameValidator(props.name)) {
                 return false;
             }
-            if(!lastNameValidator(props.lastName)) {
+            if (!lastNameValidator(props.lastName)) {
                 return false;
             }
-            if(!emailValidator(props.email)) {
+            if (!emailValidator(props.email)) {
                 return false;
             }
-            if(!telNumberValidator(props.tel)) {
+            if (!telNumberValidator(props.tel)) {
                 return false;
             }
         }
         // PAGE 3
-        if(props.currentPage === 2) {
-            if(!props.acceptedPersonalData) {
+        if (props.currentPage === 2) {
+            if (!props.acceptedPersonalData) {
                 return false;
             }
         }
@@ -96,10 +118,10 @@ const Form = (props) => {
                         : <Button text="Späť" isDisabled={false} isMain={false} method={props.onPageBack} />
                 }
                 {
-                    props.currentPage >= props.pages.length -1
+                    props.currentPage >= props.pages.length - 1
                         ? <Button text="Odoslať formulár" isDisabled={
                             !canContinue()
-                        } isMain={true} method={() => {}} />
+                        } isMain={true} method={sendData} />
                         : <Button text="Pokračovať" isDisabled={
                             !canContinue()
                         } isMain={true} method={props.onPageForward} />
