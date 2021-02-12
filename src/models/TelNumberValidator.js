@@ -1,5 +1,8 @@
 const telNumberValidator = (val) => {
     val = val.trim();
+    if(val.length === 0) {
+        return true;
+    }
     if (val.charAt(0) !== "+") {
         return false;
     }
