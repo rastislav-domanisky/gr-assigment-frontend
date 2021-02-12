@@ -8,7 +8,7 @@
         width: 550px;
         height: 74px;
         box-sizing: border-box;
-        margin: 15px auto;
+        margin: 8px auto;
         background: #FFFFFF;
         border: 1px solid #DFDFDF;
         border-radius: 8px;
@@ -26,6 +26,33 @@
             font-size: 16px;
             line-height: 21px;
             color: #2F2F2F;
+        }
+
+        .iContactRow {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .iContactCountry {
+                cursor: pointer;
+                width: 23px;
+                height: 23px;
+                margin-right: 12px;
+            }
+            
+            .iContactText {
+                border: none;
+                padding: 0;
+                margin: 0;
+                font-family: Public Sans;
+                font-style: normal;
+                font-weight: 800;
+                font-size: 19px;
+                line-height: 21px;
+                color: #2F2F2F;
+            }
         }
 
         .iContactText {

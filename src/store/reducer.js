@@ -56,6 +56,26 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currentPage: state.currentPage + 1,
             };
+        case actionTypes.UPDATE_NAME:
+            return {
+                ...state,
+                name: action.payload,
+            };
+        case actionTypes.UPDATE_LAST_NAME:
+            return {
+                ...state,
+                lastName: action.payload,
+            };
+        case actionTypes.UPDATE_EMAIL:
+            return {
+                ...state,
+                email: action.payload,
+            };
+        case actionTypes.UPDATE_TEL:
+            return {
+                ...state,
+                tel: action.payload,
+            };
     }
     return state;
 }

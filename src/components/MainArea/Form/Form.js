@@ -7,6 +7,10 @@ import Button from '../../Button/Button';
 import FormInput from './FormInput/FormInput';
 import * as actionTypes from '../../../store/actions';
 import amountValidator from '../../../models/AmountValidator';
+import nameValidator from '../../../models/NameValidator';
+import lastNameValidator from '../../../models/LastNameValidator';
+import emailValidator from '../../../models/EmailValidator';
+import telNumberValidator from '../../../models/TelNumberValidator';
 
 const Form = (props) => {
 
@@ -22,7 +26,18 @@ const Form = (props) => {
         }
         // PAGE 2
         if(props.currentPage === 1) {
-            
+            if(!nameValidator(props.name)) {
+                return false;
+            }
+            if(!lastNameValidator(props.lastName)) {
+                return false;
+            }
+            if(!emailValidator(props.email)) {
+                return false;
+            }
+            if(!telNumberValidator(props.tel)) {
+                return false;
+            }
         }
         // PAGE 3
         if(props.currentPage === 2) {
@@ -48,7 +63,7 @@ const Form = (props) => {
             case 1:
                 return (
                     <div>
-                        <FormInput label="O vás" isRequired={true} inputType="contact" />
+                        <FormInput label="O vás" isRequired={false} inputType="contact" />
                     </div>
                 );
             case 2:
