@@ -11,6 +11,8 @@ const initialState = {
     tel: "",
     acceptedPersonalData: false,
     shelters: null,
+    snackBarShowed: false,
+    snackBarMsg: "",
     pages: [
         {
             heading: "Vyberte si možnosť, ako chcete pomôcť"
