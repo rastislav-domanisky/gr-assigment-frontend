@@ -11,6 +11,7 @@ import nameValidator from '../../../models/NameValidator';
 import lastNameValidator from '../../../models/LastNameValidator';
 import emailValidator from '../../../models/EmailValidator';
 import telNumberValidator from '../../../models/TelNumberValidator';
+import DetailsCheck from './DetailsCheck/DetailsCheck';
 
 const Form = (props) => {
 
@@ -69,7 +70,7 @@ const Form = (props) => {
             case 2:
                 return (
                     <div>
-
+                        <DetailsCheck />
                     </div>
                 );
         }
@@ -94,7 +95,9 @@ const Form = (props) => {
                 }
                 {
                     props.currentPage >= props.pages.length -1
-                        ? <div />
+                        ? <Button text="Odoslať formulár" isDisabled={
+                            false
+                        } isMain={true} method={() => {}} />
                         : <Button text="Pokračovať" isDisabled={
                             !canContinue()
                         } isMain={true} method={props.onPageForward} />
