@@ -40,7 +40,7 @@ const Form = (props) => {
         shelter.createContrib(data).then((result) => {
             props.onShowSnackBar(result["message"]);
             props.onPageSet(0);
-            setTimeout(hideSnackBar, 2000);
+            setTimeout(hideSnackBar, 3000);
         });
     }
 
