@@ -9,3 +9,7 @@ export const UPDATE_LAST_NAME = 'UPDATE_LAST_NAME';
 export const UPDATE_EMAIL = 'UPDATE_EMAIL';
 export const UPDATE_TEL = 'UPDATE_TEL';
 export const UPDATE_PERSONAL_DATA = 'UPDATE_PERSONAL_DATA';
+export const SHOW_SNACKBAR = 'SHOW_SNACKBAR';
+export const HIDE_SNACKBAR = 'HIDE_SNACKBAR';
+export const PAGE_SET = 'PAGE_SET';
+export const RESET_STATE = 'RESET_STATE';

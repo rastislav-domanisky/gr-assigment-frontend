@@ -18,6 +18,10 @@ const Form = (props) => {
 
     const shelter = new Shelter();
 
+    const hideSnackBar = async () => {
+        props.onHideSnackBar();
+    }
+
     const sendData = () => {
         let data = {
             "firstName": props.name,
@@ -33,7 +37,10 @@ const Form = (props) => {
             }
         }
         shelter.createContrib(data).then((result) => {
-            console.log(result);
+            props.onShowSnackBar(result["message"]);
+            props.onPageSet(0);
+            props.onResetState();
+            setTimeout(hideSnackBar, 2000);
         });
     }
 
@@ -141,6 +148,10 @@ const mapDispatchToProps = dispatch => {
     return {
         onPageBack: () => dispatch({ type: actionTypes.PAGE_BACK }),
         onPageForward: () => dispatch({ type: actionTypes.PAGE_FORWARD }),
+        onShowSnackBar: (data) => dispatch({ type: actionTypes.SHOW_SNACKBAR, payload: data }),
+        onPageSet: (data) => dispatch({ type: actionTypes.PAGE_SET, payload: data }),
+        onHideSnackBar: () => dispatch({ type: actionTypes.HIDE_SNACKBAR }),
+        onResetState: () => dispatch({ type: actionTypes.RESET_STATE }),
     }
 };
 

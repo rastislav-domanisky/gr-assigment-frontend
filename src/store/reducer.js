@@ -83,6 +83,28 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 acceptedPersonalData: action.payload,
             };
+        case actionTypes.PAGE_SET:
+            return {
+                ...state,
+                currentPage: action.payload,
+            };
+        case actionTypes.SHOW_SNACKBAR:
+            return {
+                ...state,
+                snackBarMsg: action.payload,
+                snackBarShowed: true,
+            };
+        case actionTypes.HIDE_SNACKBAR:
+            return {
+                ...state,
+                snackBarMsg: "",
+                snackBarShowed: false,
+            };
+        case actionTypes.RESET_STATE:
+            return {
+                ...initialState,
+                shelters: state.shelters,
+            };
     }
     return state;
 }

@@ -4,7 +4,7 @@
     left: 0;
     bottom: 0;
     height: 60px;
-    background: #9F9F9F;
+    background: rgba($color: #9F9F9F, $alpha: 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
         font-weight: 800;
         font-size: 20px;
         line-height: 19px;
-        color: #FFF;
+        color: #000;
     }
 }
 
