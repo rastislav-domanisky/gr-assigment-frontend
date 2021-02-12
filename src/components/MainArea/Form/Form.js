@@ -20,6 +20,7 @@ const Form = (props) => {
 
     const hideSnackBar = async () => {
         props.onHideSnackBar();
+        props.onResetState();
     }
 
     const sendData = () => {
@@ -39,7 +40,6 @@ const Form = (props) => {
         shelter.createContrib(data).then((result) => {
             props.onShowSnackBar(result["message"]);
             props.onPageSet(0);
-            props.onResetState();
             setTimeout(hideSnackBar, 2000);
         });
     }
