@@ -61,7 +61,7 @@ const InputContact = (props) => {
                     type="email"
                     placeholder="Zadajte Váš e-mail"
                     minLength="2"
-                    maxLength="20"
+                    maxLength="50"
                     value={props.email}
                     onChange={
                         (e) => {
