@@ -35,7 +35,7 @@ const InputAmount = (props) => {
                 })
             }
             <div className="amntInput">
-                <input type="text" value={props.amount} onChange={
+                <input type="number" value={props.amount} onChange={
                     (e) => {
                         updateAmount(e.target.value.trim());
                     }
