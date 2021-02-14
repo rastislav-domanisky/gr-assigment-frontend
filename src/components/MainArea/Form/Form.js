@@ -18,8 +18,8 @@ const Form = (props) => {
 
     const shelter = new Shelter();
 
-    const hideSnackBar = async () => {
-        props.onHideSnackBar();
+    const hideAlertDialog = async () => {
+        props.onHideAlertDialog();
         props.onResetState();
     }
 
@@ -38,9 +38,9 @@ const Form = (props) => {
             }
         }
         shelter.createContrib(data).then((result) => {
-            props.onShowSnackBar(result["message"]);
+            props.onShowAlertDialog(result["message"]);
             props.onPageSet(0);
-            setTimeout(hideSnackBar, 3000);
+            setTimeout(hideAlertDialog, 3000);
         });
     }
 
@@ -148,9 +148,9 @@ const mapDispatchToProps = dispatch => {
     return {
         onPageBack: () => dispatch({ type: actionTypes.PAGE_BACK }),
         onPageForward: () => dispatch({ type: actionTypes.PAGE_FORWARD }),
-        onShowSnackBar: (data) => dispatch({ type: actionTypes.SHOW_SNACKBAR, payload: data }),
+        onShowAlertDialog: (data) => dispatch({ type: actionTypes.SHOW_ALERT_DIALOG, payload: data }),
         onPageSet: (data) => dispatch({ type: actionTypes.PAGE_SET, payload: data }),
-        onHideSnackBar: () => dispatch({ type: actionTypes.HIDE_SNACKBAR }),
+        onHideAlertDialog: () => dispatch({ type: actionTypes.HIDE_ALERT_DIALOG }),
         onResetState: () => dispatch({ type: actionTypes.RESET_STATE }),
     }
 };

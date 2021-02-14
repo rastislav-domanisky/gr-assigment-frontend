@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import MainArea from './components/MainArea/MainArea';
 import Footer from './components/Footer/Footer';
 import HorizontalSeparator from './components/HorizontalSeparator/HorizontalSeparator';
-import SnackBar from './components/SnackBar/SnackBar';
+import AlertDialog from './components/AlertDialog/AlertDialog';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <MainArea />
       <HorizontalSeparator />
       <Footer />
-      <SnackBar />
+      <AlertDialog />
     </div>
   );
 }

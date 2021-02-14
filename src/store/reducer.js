@@ -11,8 +11,8 @@ const initialState = {
     tel: "",
     acceptedPersonalData: false,
     shelters: null,
-    snackBarShowed: false,
-    snackBarMsg: "",
+    alertDialogShowed: false,
+    alertDialogMsg: "",
     pages: [
         {
             heading: "Vyberte si možnosť, ako chcete pomôcť"
@@ -88,17 +88,17 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currentPage: action.payload,
             };
-        case actionTypes.SHOW_SNACKBAR:
+        case actionTypes.SHOW_ALERT_DIALOG:
             return {
                 ...state,
-                snackBarMsg: action.payload,
-                snackBarShowed: true,
+                alertDialogMsg: action.payload,
+                alertDialogShowed: true,
             };
-        case actionTypes.HIDE_SNACKBAR:
+        case actionTypes.HIDE_ALERT_DIALOG:
             return {
                 ...state,
-                snackBarMsg: "",
-                snackBarShowed: false,
+                alertDialogMsg: "",
+                alertDialogShowed: false,
             };
         case actionTypes.RESET_STATE:
             return {
