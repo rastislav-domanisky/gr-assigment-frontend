@@ -1,5 +1,5 @@
 .InputList {
-    width: 550px;
+    width: 100%;
     height: 74px;
     border-radius: 8px;
     background: #FFF;
@@ -12,6 +12,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 510px) {
+        height: 55px;
+    }
 
     .inputListTags {
         display: flex;
@@ -26,6 +30,10 @@
             font-size: 16px;
             line-height: 21px;
             color: #2F2F2F;
+
+            @media (max-width: 510px) {
+                font-size: 13px;
+            }
         }
 
         .subText {
@@ -36,6 +44,10 @@
             font-size: 16px;
             line-height: 21px;
             color: #9F9F9F;
+
+            @media (max-width: 510px) {
+                font-size: 13px;
+            }
         }
     }
 
@@ -45,7 +57,7 @@
 }
 
 .InputListOpened {
-    width: 550px;
+    width: 400px;
     height: 300px;
     border-radius: 8px;
     background: #FFF;
@@ -73,6 +85,10 @@
             font-size: 16px;
             line-height: 21px;
             color: rgba($color: #2F2F2F, $alpha: 0.8);
+
+            @media (max-width: 510px) {
+                font-size: 13px;
+            }
         }
     }
 

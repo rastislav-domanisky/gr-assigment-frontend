@@ -17,6 +17,10 @@
             font-size: 16px;
             line-height: 19px;
             color: #2F2F2F;
+
+            @media (max-width: 350px) {
+                font-size: 14px;
+            }
         }
 
         .detailValue {
@@ -28,6 +32,10 @@
             font-size: 18px;
             line-height: 19px;
             color: #2F2F2F;
+
+            @media (max-width: 350px) {
+                font-size: 14px;
+            }
         }
     }
 
@@ -42,6 +50,10 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 21px;
+
+        @media (max-width: 350px) {
+            font-size: 13px;       
+        }
 
         .checkBtn {
             width: 34px;

@@ -3,6 +3,10 @@
     padding: 5px 15px;
     width: 180px;
 
+    @media (max-width: 1130px) {
+        margin: auto;
+    }
+
     p {
         font-family: "Public Sans";
         font-weight: 800;

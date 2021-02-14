@@ -12,6 +12,11 @@
     font-size: 14px;
     line-height: 19px;
     cursor: pointer;
+
+    @media (max-width: 510px) {
+        font-size: 12px;
+        padding: 13px 16px;
+    }
 }
 
 .Disabled {
