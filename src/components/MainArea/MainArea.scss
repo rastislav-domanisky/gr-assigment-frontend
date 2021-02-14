@@ -1,18 +1,19 @@
 .MainArea {
     width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    margin: 15px 20px;
+    box-sizing: border-box;
+    padding: 0 15px;
 
     .dogImage {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 364px;
-        margin-left: 3%;
+        box-sizing: border-box;
+        padding-left: 40px;
 
         @media (max-width: 1200px) {
             width: 250px;
@@ -32,5 +33,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
     }
 }
